@@ -85,7 +85,7 @@ I typically re-subscribe whenever I re-authorize, so about once an hour.
 
 ###### Subscribing (Call this when no existing subscriptions have been setup)
 ---
-**Request**
+*Request*
 ```
 <iq to='pubsub.active-calls.xmpp.onsip.com' type='set' id='5017' xmlns='jabber:client'>
   <pubsub xmlns='http://jabber.org/protocol/pubsub'>
@@ -94,7 +94,7 @@ I typically re-subscribe whenever I re-authorize, so about once an hour.
 </iq>
 ```
 
-**Response**
+*Response*
 ```
 <iq from="pubsub.active-calls.xmpp.onsip.com" type="result" id="5017" to="hiro@example.onsip.com/psi" >
   <pubsub xmlns="http://jabber.org/protocol/pubsub">
@@ -114,7 +114,7 @@ I typically re-subscribe whenever I re-authorize, so about once an hour.
 ---
 http://xmpp.org/extensions/xep-0060.html#subscriber-configure
 
-**Request**
+*Request*
 ```
 <iq to='pubsub.active-calls.xmpp.onsip.com' type='set' id='5021' xmlns='jabber:client'>
   <pubsub xmlns='http://jabber.org/protocol/pubsub'>
@@ -138,7 +138,7 @@ http://xmpp.org/extensions/xep-0060.html#subscriber-configure
 </iq>
 ```
 
-**Response**
+*Response*
 ```
 <iq from="pubsub.active-calls.xmpp.onsip.com" type="result" id="5021" to="hiro@example.onsip.com/psi" />
 ```
@@ -146,7 +146,7 @@ http://xmpp.org/extensions/xep-0060.html#subscriber-configure
 
 ###### Getting Subscriptions
 ---
-**Request**
+*Request*
 ```
 <iq to='pubsub.active-calls.xmpp.onsip.com' type='get' id='5016' xmlns='jabber:client'>
   <pubsub xmlns='http://jabber.org/protocol/pubsub'>
@@ -155,7 +155,7 @@ http://xmpp.org/extensions/xep-0060.html#subscriber-configure
 </iq>
 ```
 
-**Response**
+*Response*
 ```
 <iq from="pubsub.active-calls.xmpp.onsip.com" type="result" id="5016" to="hiro@example.onsip.com/psi" >
   <pubsub xmlns="http://jabber.org/protocol/pubsub">
@@ -168,7 +168,7 @@ http://xmpp.org/extensions/xep-0060.html#subscriber-configure
 
 ###### Unsubscribe
 ---
-**Request**
+*Request*
 ```
 <iq type='set' to='pubsub.active-calls.xmpp.onsip.com' id='unsub1'>
   <pubsub xmlns='http://jabber.org/protocol/pubsub'>
@@ -182,7 +182,7 @@ http://xmpp.org/extensions/xep-0060.html#subscriber-configure
 ---
 Does not require any sort of authorization or subscription. This is an adhoc command. Once executed, your phone will ring.
 
-**Request**
+*Request*
 ```
 <iq to='commands.active-calls.xmpp.onsip.com' type='set' id='5018' xmlns='jabber:client'>
   <command xmlns='http://jabber.org/protocol/commands' node='create'>
@@ -201,7 +201,7 @@ Does not require any sort of authorization or subscription. This is an adhoc com
 </iq>
 ```
 
-**Response**
+*Response*
 ```
 <iq from="commands.active-calls.xmpp.onsip.com" type="result" id="5018" to="hiro@example.onsip.com/psi" >
   <command xmlns="http://jabber.org/protocol/commands" status="completed" node="create" sessionid="9d0aa91699f9c443c3c8626d8abb7067" >
