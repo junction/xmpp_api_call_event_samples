@@ -38,16 +38,16 @@ I typically re-subscribe whenever I re-authorize, so about once an hour.
   <command xmlns='http://jabber.org/protocol/commands' node='authorize-plain'>
     <x xmlns='jabber:x:data' type='submit'>
       <field var='sip-address'>
-        <value>oren@oren.onsip.com</value>
+        <value>hiro@example.onsip.com</value>
       </field>
       <field var='password'>
-        <value></value>
+        <value>webpassword12345</value>
       </field>
       <field var='auth-for-all'>
         <value>true</value>
       </field>
       <field var='jid'>
-        <value>oren@oren.onsip.com/psi</value>
+        <value>hiro@example.onsip.com/psi</value>
       </field>
     </x>
   </command>
@@ -56,56 +56,56 @@ I typically re-subscribe whenever I re-authorize, so about once an hour.
 
 *Response*
 ```
-<iq from="commands.auth.xmpp.onsip.com" type="result" id="5020" to="oren@oren.onsip.com/psi" >
+<iq from="commands.auth.xmpp.onsip.com" type="result" id="5020" to="hiro@example.onsip.com/psi" >
   <command xmlns="http://jabber.org/protocol/commands" status="completed" node="authorize-plain" sessionid="bc78d31e1078dd54d1f8d786d36fa9b1" >
-    <note type="info" >JID 'oren@oren.onsip.com' has been authorized to access resources for SIP Address(es) 'oren@oren.onsip.com,oren_marketing@oren.onsip.com,oren_support@oren.onsip.com,camp_land_1@oren.onsip.com,camp_land_2@oren.onsip.com' until 2012-11-13T16:09:58Z</note>
+    <note type="info" >JID 'hiro@example.onsip.com' has been authorized to access resources for SIP Address(es) 'hiro@example.onsip.com,hiro_marketing@example.onsip.com,hiro_support@example.onsip.com,camp_land_1@example.onsip.com,camp_land_2@example.onsip.com' until 2012-11-13T16:09:58Z</note>
     <x xmlns="jabber:x:data" type="result" >
       <field type="fixed" var="expires" >
         <value>2012-11-13T16:09:58Z</value>
       </field>
       <field type="fixed" var="sip" >
-        <value>oren@oren.onsip.com</value>
+        <value>hiro@example.onsip.com</value>
       </field>
       <field type="fixed" var="sip" >
-        <value>oren_marketing@oren.onsip.com</value>
+        <value>hiro_marketing@example.onsip.com</value>
       </field>
       <field type="fixed" var="sip" >
-        <value>oren_support@oren.onsip.com</value>
+        <value>hiro_support@example.onsip.com</value>
       </field>
       <field type="fixed" var="sip" >
-        <value>camp_land_1@oren.onsip.com</value>
+        <value>hiro_land_1@example.onsip.com</value>
       </field>
       <field type="fixed" var="sip" >
-        <value>camp_land_2@oren.onsip.com</value>
+        <value>camp_land_2@example.onsip.com</value>
       </field>
     </x>
   </command>
 </iq>
 ```
 
-Subscribing (Call this when no existing subscriptions have been setup)
+###### Subscribing (Call this when no existing subscriptions have been setup)
 ---
 **Request**
 ```
 <iq to='pubsub.active-calls.xmpp.onsip.com' type='set' id='5017' xmlns='jabber:client'>
   <pubsub xmlns='http://jabber.org/protocol/pubsub'>
-    <subscribe node='/me/oren@oren.onsip.com' jid='oren@oren.onsip.com/psi'/>
+    <subscribe node='/me/hiro@example.onsip.com' jid='hiro@example.onsip.com/psi'/>
   </pubsub>
 </iq>
 ```
 
 **Response**
 ```
-<iq from="pubsub.active-calls.xmpp.onsip.com" type="result" id="5017" to="oren@oren.onsip.com/psi" >
+<iq from="pubsub.active-calls.xmpp.onsip.com" type="result" id="5017" to="hiro@example.onsip.com/psi" >
   <pubsub xmlns="http://jabber.org/protocol/pubsub">
-    <subscription subscription="pending" jid="oren@oren.onsip.com/psi" />
+    <subscription subscription="pending" jid="hiro@example.onsip.com/psi" />
   </pubsub>
 </iq>
 ```
 ```
-<message from="pubsub.active-calls.xmpp.onsip.com" to="oren@oren.onsip.com/psi" >
+<message from="pubsub.active-calls.xmpp.onsip.com" to="hiro@example.onsip.com/psi" >
   <event xmlns="http://jabber.org/protocol/pubsub#event">
-    <subscription node="/me/oren@oren.onsip.com" subscription="subscribed" jid="oren@oren.onsip.com/psi" />
+    <subscription node="/me/hiro@example.onsip.com" subscription="subscribed" jid="hiro@example.onsip.com/psi" />
   </event>
 </message>
 ```
@@ -118,7 +118,7 @@ http://xmpp.org/extensions/xep-0060.html#subscriber-configure
 ```
 <iq to='pubsub.active-calls.xmpp.onsip.com' type='set' id='5021' xmlns='jabber:client'>
   <pubsub xmlns='http://jabber.org/protocol/pubsub'>
-    <options node='/me/oren@oren.onsip.com' jid='oren@oren.onsip.com/psi' subid='548C825398B51'>
+    <options node='/me/hiro@example.onsip.com' jid='hiro@example.onsip.com/psi' subid='548C825398B51'>
       <x xmlns='jabber:x:data' type='submit'>
         <field var='FORM_TYPE' type='hidden'>
           <value>http://jabber.org/protocol/pubsub#subscribe_options</value>
@@ -140,7 +140,7 @@ http://xmpp.org/extensions/xep-0060.html#subscriber-configure
 
 **Response**
 ```
-<iq from="pubsub.active-calls.xmpp.onsip.com" type="result" id="5021" to="oren@oren.onsip.com/psi" />
+<iq from="pubsub.active-calls.xmpp.onsip.com" type="result" id="5021" to="hiro@example.onsip.com/psi" />
 ```
 
 
@@ -150,17 +150,17 @@ http://xmpp.org/extensions/xep-0060.html#subscriber-configure
 ```
 <iq to='pubsub.active-calls.xmpp.onsip.com' type='get' id='5016' xmlns='jabber:client'>
   <pubsub xmlns='http://jabber.org/protocol/pubsub'>
-    <subscriptions node='/me/oren@oren.onsip.com'/>
+    <subscriptions node='/me/hiro@example.onsip.com'/>
   </pubsub>
 </iq>
 ```
 
 **Response**
 ```
-<iq from="pubsub.active-calls.xmpp.onsip.com" type="result" id="5016" to="oren@oren.onsip.com/psi" >
+<iq from="pubsub.active-calls.xmpp.onsip.com" type="result" id="5016" to="hiro@example.onsip.com/psi" >
   <pubsub xmlns="http://jabber.org/protocol/pubsub">
     <subscriptions>
-      <subscription subscription="subscribed" subid="548C825398B51" jid="oren@oren.onsip.com/psi" />
+      <subscription subscription="subscribed" subid="548C825398B51" jid="hiro@example.onsip.com/psi" />
     </subscriptions>
   </pubsub>
 </iq>
@@ -172,7 +172,7 @@ http://xmpp.org/extensions/xep-0060.html#subscriber-configure
 ```
 <iq type='set' to='pubsub.active-calls.xmpp.onsip.com' id='unsub1'>
   <pubsub xmlns='http://jabber.org/protocol/pubsub'>
-     <unsubscribe node='/me/oren@oren.onsip.com' subid="548C825398B51" jid="oren@oren.onsip.com/psi" />
+     <unsubscribe node='/me/hiro@example.onsip.com' subid="548C825398B51" jid="hiro@example.onsip.com/psi" />
   </pubsub>
 </iq>
 ```
@@ -191,7 +191,7 @@ Does not require any sort of authorization or subscription. This is an adhoc com
         <value>sip:18008013381@junctionnetworks.com</value>
       </field>
       <field var='from'>
-        <value>sip:oren@oren.onsip.com</value>
+        <value>sip:hiro@example.onsip.com</value>
       </field>
       <field var='call-setup-id'>
         <value>1352821510415667</value>
@@ -203,7 +203,7 @@ Does not require any sort of authorization or subscription. This is an adhoc com
 
 **Response**
 ```
-<iq from="commands.active-calls.xmpp.onsip.com" type="result" id="5018" to="oren@oren.onsip.com/psi" >
+<iq from="commands.active-calls.xmpp.onsip.com" type="result" id="5018" to="hiro@example.onsip.com/psi" >
   <command xmlns="http://jabber.org/protocol/commands" status="completed" node="create" sessionid="9d0aa91699f9c443c3c8626d8abb7067" >
     <x xmlns="jabber:x:data" type="result" >
       <field type="fixed" var="call-setup-id" >
