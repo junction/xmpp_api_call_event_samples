@@ -1,12 +1,6 @@
-###### **Author:** Oren
-###### **Date:** 11/13/2012
-###### **Description:**
-A samples based guide to working with OnSIP's XMPP API.
-
-
 #### A General Overview
 ---
-What we are featuring in this doc are the necessary steps to have XMPP PubSub notify us of call events.  When we say call events we are talking about the following:
+A samples based guide to working with OnSIP's XMPP API for call events. What we are featuring in this doc are the necessary steps to have XMPP PubSub notify us of call events.  When we say call events we are talking about the following:
 
     REQUESTED for incoming calls
     CREATED For outgoing calls
