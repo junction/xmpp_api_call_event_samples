@@ -6,7 +6,7 @@ A samples based guide to working with OnSIP's XMPP API.
 
 #### A General Overview
 ---
-What we are featuring in this README are the necessary steps to have XMPP PubSub notify us of call events.  When we say call events we are talking about the following:
+What we are featuring in this doc are the necessary steps to have XMPP PubSub notify us of call events.  When we say call events we are talking about the following:
 
     REQUESTED for incoming calls
     CREATED For outgoing calls
@@ -24,6 +24,8 @@ This tool will allow you to insert xml stanzas directly into a utility window (T
 
 NOTE: Before starting, you need to make sure that in the 'Psi: Account Properties' window under Accounts, you checked off 'Use hostname as resource' and explicitly set the resource to psi. That's in order to make these samples work
 
+A working implementation of OnSIP's XMPP API can be found in this javascript based click-2-call Chrome Extension
+> [https://github.com/onsip/OnSIP-Click-to-Call-Chrome](https://github.com/onsip/OnSIP-Click-to-Call-Chrome)
 
 #### Workflow Summary for Setting Up the Jabber Client for Real-Time Call Events
 ---
@@ -173,7 +175,7 @@ http://xmpp.org/extensions/xep-0060.html#subscriber-configure
 ###### Unsubscribe
 ---
 **Request**
-``
+```
 <iq type='set' to='pubsub.active-calls.xmpp.onsip.com' id='unsub1'>
   <pubsub xmlns='http://jabber.org/protocol/pubsub'>
      <unsubscribe node='/me/oren@oren.onsip.com' subid="548C825398B51" jid="oren@oren.onsip.com/psi" />
