@@ -182,6 +182,13 @@ http://xmpp.org/extensions/xep-0060.html#subscriber-configure
 ---
 Does not require any sort of authorization or subscription. This is an adhoc command. Once executed, your phone will ring.
 
+When working on a Click-2-Call type of application:
+
+In Click-2-Call, the end user of an application will click a phone number in an application such as a website.  That application will send an XMPP request like the one below to intiate the call setup.  Upon receipt of this request, our SIP Servers will execute a call setup by calling out to all of the end user's registered phones with the caller id showing call setup.  When the end user picks up the phone, the call is then made to the phone number that was selected in the application.
+
+Given this workflow, an application that is also subscribed to call events will recieve the incoming call setup event. To suppress call setup notifications from the end user, it's possible for custom built applications to utilize the call-setup-id field in the submission below.  The value in the call-setup-id field will be delivered back down to the client in an incoming active call event subscription.  The logic in the end user's application should compare the call-setup-id in this ad hoc command with the call-setup-id received in the incoming active call event. If the call setup ids match, then it's part of the call setup and the notification can be suppressed, otherwise the call is a legitimate incoming call from another user agent.
+
+
 *Request*
 ```
 <iq to='commands.active-calls.xmpp.onsip.com' type='set' id='5018' xmlns='jabber:client'>
